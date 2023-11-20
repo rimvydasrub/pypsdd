@@ -322,7 +322,7 @@ class InstMap:
             self.bitset = self.bitset << (var-self.var_count)
             self.var_count = var
 
-        if value == 1 and (var not in self.inst or self.inst[var] is 0):
+        if value == 1 and (var not in self.inst or self.inst[var] == 0):
             self.bitset += 1 << (self.var_count-var)
         if (value == 0 or value is None) and \
            (var in self.inst and self.inst[var] == 1):
