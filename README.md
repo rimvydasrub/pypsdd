@@ -1,36 +1,16 @@
-# The PyPSDD Package (BETA)
-## version 0.1, July 4, 2018
+# Python Packgage for Probabilistc Sentential Decision Diagrams
 
-The PyPSDD Package is a python module for learning and reasoning with
-Probabilistic Sentential Decision Diagrams (PSDDs).
-
-(This is a **beta** release: there are probably bugs.)
-
-The PyPSDD Package can read in SDDs constructed by the SDD package:
-
-  http://reasoning.cs.ucla.edu/sdd
-
-which is an open-source system (in the C language) for constructing
-and manipulating SDDs.  Various wrappers are also available:
-
-* PySDD (Python): https://github.com/wannesm/PySDD
-* JSDD (Java): https://github.com/ML-KULeuven/JSDD
-
-We suggest using the PyPy interpreter (https://pypy.org/) with the
-PyPSDD Package.
-
-See also: http://reasoning.cs.ucla.edu/psdd/
+Custom version of the PyPSDD package based o version used for 
+devepoping [Semantic Probabilistic Layers](https://github.com/KareemYousrii/SPL/blob/master/grids/pypsdd/)
 
 ## REFERENCES
 
 The PSDD was originally introduced in the paper:
 
-```
-"Probabilistic Sentential Decision Diagrams"
+```"Probabilistic Sentential Decision Diagrams"
 by Doga Kisa and Guy Van den Broeck and Arthur Choi and Adnan Darwiche
 In Proceedings of the 14th International Conference on 
-   Principles of Knowledge Representation and Reasoning (KR), 2014.
-```
+   Principles of Knowledge Representation and Reasoning (KR), 2014.```
 http://reasoning.cs.ucla.edu/fetch.php?id=136&type=pdf
 
 ## AUTHORS
