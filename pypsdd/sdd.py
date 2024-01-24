@@ -584,8 +584,8 @@ class NormalizedSddNode(SddNode):
 
         # Need to put the literals in ascending order,
         # sorting by the absolute value of the literal
-        indices = data.abs().argsort(dim=-1)
-        return data.gather(1, indices)
+        #indices = data.abs().argsort(dim=-1)
+        return #data.gather(1, indices)
 
 ########################################
 # Start Determinstic and SD PCs
