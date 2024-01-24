@@ -558,7 +558,7 @@ class NormalizedSddNode(SddNode):
 
         return count
 
-    def get_weighted_mpe(self, lit_weights, clear_data=True):
+   def get_weighted_mpe(self, lit_weights, clear_data=True):
         """Compute the MPE instation given weights associated with literals.
 
         Assumes the SDD is normalized.
@@ -569,23 +569,31 @@ class NormalizedSddNode(SddNode):
                 data = (0, [])
             elif node.is_true():
                 # Need to pick max assignment for variable here
-                b_ind = max([0,1], key=lambda x: lit_weights[node.vtree.var-1][x])
+                b_ind = max([0, 1], key=lambda x: lit_weights[node.vtree.var - 1][x])
                 # If it's a 0, then -lit number, else lit number
-                data = (lit_weights[node.vtree.var-1][b_ind], [pow(-1,b_ind+1) * node.vtree.var])
+                data = (
+                    lit_weights[node.vtree.var - 1][b_ind],
+                    [pow(-1, b_ind + 1) * node.vtree.var],
+                )
             elif node.is_literal():
                 if node.literal > 0:
-                    data = (lit_weights[node.literal-1][1], [node.literal])
+                    data = (lit_weights[node.literal - 1][1], [node.literal])
                 else:
-                    data = (lit_weights[-node.literal-1][0], [node.literal])
-            else: # node is_decomposition()
-                data = max(((p.data[0] * s.data[0], p.data[1] + s.data[1]) for p,s in node.positive_elements)
-                        , key=lambda x: x[0])
+                    data = (lit_weights[-node.literal - 1][0], [node.literal])
+            else:  # node is_decomposition()
+                data = max(
+                    (
+                        (p.data[0] * s.data[0], p.data[1] + s.data[1])
+                        for p, s in node.positive_elements
+                    ),
+                    key=lambda x: x[0],
+                )
             node.data = data
 
         # Need to put the literals in ascending order,
         # sorting by the absolute value of the literal
-        #indices = data.abs().argsort(dim=-1)
-        return #data.gather(1, indices)
+        # indices = data.abs().argsort(dim=-1)
+        return data  # .gather(1, indices)
 
 ########################################
 # Start Determinstic and SD PCs
