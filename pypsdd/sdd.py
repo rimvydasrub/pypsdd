@@ -710,8 +710,8 @@ class NormalizedSddNode(SddNode):
 
         # Need to put the literals in ascending order,
         # sorting by the absolute value of the literal
-        indices = data.abs().argsort(dim=-2)
-        return data.gather(1, indices)
+        # indices = data.abs().argsort(dim=-2)
+        return data #.gather(1, indices)
 
     def ff_ll(self, litleaves, target, clear_data=True):
         """ Generates a torch arithmetic circuit according to the weighted
