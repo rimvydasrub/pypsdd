@@ -558,9 +558,9 @@ class NormalizedSddNode(SddNode):
 
         return count
 
-   def get_weighted_mpe(self, lit_weights, clear_data=True):
+    def get_weighted_mpe(self, lit_weights, clear_data=True):
         """Compute the MPE instation given weights associated with literals.
-
+    
         Assumes the SDD is normalized.
         """
         for node in self.as_positive_list(clear_data=clear_data):
@@ -589,7 +589,7 @@ class NormalizedSddNode(SddNode):
                     key=lambda x: x[0],
                 )
             node.data = data
-
+        
         # Need to put the literals in ascending order,
         # sorting by the absolute value of the literal
         # indices = data.abs().argsort(dim=-1)
